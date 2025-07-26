@@ -1,12 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.module.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PostPage from './pages/PostPage';
+import AuthorProfile from './pages/AuthorProfile';
 
 function App() {
   return (
-    <div className="App">
-      <PostPage></PostPage>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PostPage />} />
+        <Route path="/author/:id" element={<AuthorProfile />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
