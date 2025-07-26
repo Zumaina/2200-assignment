@@ -1,25 +1,30 @@
-import React, { useState } from 'react';
-import styles from '../css/ReactionBar.module.css';
+// src/components/ReactionBar.js
+import { useState } from "react";
+import styles from "../css/ReactionBar.module.css";
+
+const reactions = [
+  { type: "Like", percentage: "20%" },
+  { type: "Love", percentage: "60%" },
+  { type: "Angry", percentage: "5%" },
+  { type: "Sad", percentage: "5%" },
+];
 
 const ReactionBar = () => {
   const [selected, setSelected] = useState(null);
 
-  const reactions = ['👍', '❤️', '😂', '😮', '😢'];
-
-  const handleClick = (emoji) => {
-    setSelected(emoji);
-  };
-
   return (
-    <div className={styles.reactionBar}>
-      {reactions.map((emoji, index) => (
-        <button
+    <div className={styles.container}>
+      {reactions.map((reaction, index) => (
+        <div
           key={index}
-          onClick={() => handleClick(emoji)}
-          className={`${styles.reactionButton} ${selected === emoji ? styles.selected : ''}`}
+          className={`${styles.reactionBox} ${
+            selected === index ? styles.selected : ""
+          }`}
+          onClick={() => setSelected(index)}
         >
-          {emoji}
-        </button>
+          <span className={styles.label}>{reaction.type}</span>
+          <span className={styles.percent}>{reaction.percentage}</span>
+        </div>
       ))}
     </div>
   );
