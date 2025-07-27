@@ -1,9 +1,27 @@
 import { Link } from "react-router-dom";
 import ReactionBar from "../components/ReactionBar";
 import CommentBox from "../components/CommentBox";
+import Pagination from "../components/Pagination";
+import { useState } from "react";
 
 const PostPage = () => {
   const dummyAuthorId = "123";
+
+  // Dummy data
+  const allComments = [
+    { id: 1, author: "Alice", text: "This is the first comment." },
+    { id: 2, author: "Bob", text: "This is the second comment." },
+    { id: 3, author: "Charlie", text: "Third comment here!" },
+    { id: 4, author: "David", text: "Another insightful comment." },
+    { id: 5, author: "Eva", text: "Final comment on the post." },
+  ];
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const commentsPerPage = 2;
+
+  const indexOfLast = currentPage * commentsPerPage;
+  const indexOfFirst = indexOfLast - commentsPerPage;
+  const currentComments = allComments.slice(indexOfFirst, indexOfLast);
 
   return (
     <div>
@@ -11,8 +29,24 @@ const PostPage = () => {
       <p>
         Author: <Link to={`/author/${dummyAuthorId}`}>John Doe</Link>
       </p>
+
       <ReactionBar />
-      <CommentBox />
+
+      {currentComments.map((comment) => (
+        <CommentBox
+          key={comment.id}
+          id={comment.id}
+          author={comment.author}
+          text={comment.text}
+        />
+      ))}
+
+      <Pagination
+        totalItems={allComments.length}
+        itemsPerPage={commentsPerPage}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 };
