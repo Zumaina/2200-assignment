@@ -14,7 +14,9 @@ const CommentBox = ({ id, author, text }) => {
         <div className={styles.avatar}>{author.charAt(0)}</div>
         <strong>{author}</strong>
       </div>
+
       <p>{text}</p>
+
       <div className={styles.buttonRow}>
         <button
           className={`${styles.reactionButton} ${
