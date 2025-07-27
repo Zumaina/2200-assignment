@@ -1,38 +1,44 @@
 .commentBox {
-  background-color: #f2f2f2;
+  background-color: #f9f9f9;
   padding: 16px;
   margin-bottom: 20px;
   border-radius: 8px;
   font-family: Arial, sans-serif;
+  position: relative;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
-.buttonRow {
-  margin-top: 12px;
-  display: flex;
-  gap: 10px;
+/* Report button at top-right */
+.reportWrapper {
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }
 
-.reactionButton {
-  padding: 6px 12px;
-  border: none;
-  background-color: #d9d9d9;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.reactionButton:hover {
-  background-color: #c0c0c0;
-}
-
-.selected {
-  background-color: #4caf50;
+.reportButton {
+  background-color: #dc3545;
   color: white;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.reportButton:hover {
+  background-color: #c82333;
+}
+
+/* Author and Avatar Row */
+.authorRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-color: #007bff;
   color: white;
@@ -44,8 +50,70 @@
   font-size: 16px;
 }
 
-.authorRow {
+.authorInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.date {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Buttons Row */
+.buttonRow {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.reactionButton {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  gap: 6px;
+}
+
+/* Like button */
+.like {
+  background-color: #e0f7e9;
+  color: #28a745;
+}
+.like:hover {
+  background-color: #c8f0d7;
+}
+
+/* Dislike button */
+.dislike {
+  background-color: #fbe9e7;
+  color: #dc3545;
+}
+.dislike:hover {
+  background-color: #f7cfcf;
+}
+
+/* Reply button */
+.reply {
+  background-color: #e7f0fe;
+  color: #007bff;
+}
+.reply:hover {
+  background-color: #cce0fb;
+}
+
+/* Selected state */
+.selected {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Bold count beside buttons */
+.count {
+  font-weight: bold;
 }
