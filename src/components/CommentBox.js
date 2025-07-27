@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../css/CommentBox.module.css";
 
 const CommentBox = ({ id, author, text }) => {
-  const [selectedReaction, setSelectedReaction] = useState(null);
+  const [selectedReaction, setSelectedReaction] = useState("");
 
   const handleReaction = (reaction) => {
     setSelectedReaction(reaction);
@@ -10,17 +10,24 @@ const CommentBox = ({ id, author, text }) => {
 
   return (
     <div className={styles.commentBox}>
-      <p><strong>{author}</strong></p>
+      <div className={styles.authorRow}>
+        <div className={styles.avatar}>{author.charAt(0)}</div>
+        <strong>{author}</strong>
+      </div>
       <p>{text}</p>
       <div className={styles.buttonRow}>
         <button
-          className={`${styles.reactionButton} ${selectedReaction === "like" ? styles.selected : ""}`}
+          className={`${styles.reactionButton} ${
+            selectedReaction === "like" ? styles.selected : ""
+          }`}
           onClick={() => handleReaction("like")}
         >
           <strong>Like</strong>
         </button>
         <button
-          className={`${styles.reactionButton} ${selectedReaction === "dislike" ? styles.selected : ""}`}
+          className={`${styles.reactionButton} ${
+            selectedReaction === "dislike" ? styles.selected : ""
+          }`}
           onClick={() => handleReaction("dislike")}
         >
           <strong>Dislike</strong>

@@ -29,3 +29,23 @@
   background-color: #4caf50;
   color: white;
 }
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.authorRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
