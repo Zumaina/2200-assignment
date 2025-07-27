@@ -32,6 +32,38 @@ const PostPage = () => {
 
       <ReactionBar />
 
+
+              {/* Comments Summary and Input */}
+      <div style={{ marginTop: "30px", padding: "10px" }}>
+        <h3>Number of Comments: {allComments.length}</h3>
+        <div style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
+          <input
+            type="text"
+            placeholder="Write your comment..."
+            style={{
+              flex: 1,
+              padding: "8px",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+            }}
+          />
+          <button
+            style={{
+              padding: "8px 16px",
+              backgroundColor: "#007bff",
+              color: "white",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+              fontWeight: "bold",
+            }}
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+
       {currentComments.map((comment) => (
         <CommentBox
           key={comment.id}
@@ -40,6 +72,8 @@ const PostPage = () => {
           text={comment.text}
         />
       ))}
+
+      
 
       <Pagination
         totalItems={allComments.length}
