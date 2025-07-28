@@ -1,13 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ReactionBar from "../components/ReactionBar";
 import CommentBox from "../components/CommentBox";
 import Pagination from "../components/Pagination";
-import { useState } from "react";
+import styles from "../css/PostPage.module.css";
 
 const PostPage = () => {
   const dummyAuthorId = "123";
 
-  // Dummy data
   const allComments = [
     { id: 1, author: "Alice", text: "This is the first comment." },
     { id: 2, author: "Bob", text: "This is the second comment." },
@@ -32,55 +32,38 @@ const PostPage = () => {
 
       <ReactionBar />
 
-
-              {/* Comments Summary and Input */}
-      <div style={{ marginTop: "30px", padding: "10px" }}>
+      {/* ====== FULL COLORED BOX STARTS HERE ====== */}
+      <div className={styles.commentsSection}>
+        {/* Comments Summary and Input */}
         <h3>Number of Comments: {allComments.length}</h3>
-        <div style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
+        <div className={styles.commentInputRow}>
           <input
             type="text"
             placeholder="Write your comment..."
-            style={{
-              flex: 1,
-              padding: "8px",
-              borderRadius: "4px",
-              border: "1px solid #ccc",
-            }}
+            className={styles.commentInput}
           />
-          <button
-            style={{
-              padding: "8px 16px",
-              backgroundColor: "#007bff",
-              color: "white",
-              border: "none",
-              borderRadius: "4px",
-              cursor: "pointer",
-              fontWeight: "bold",
-            }}
-          >
-            →
-          </button>
+          <button className={styles.commentSubmit}>→</button>
         </div>
-      </div>
 
+        {/* Render paginated comments */}
+        {currentComments.map((comment) => (
+          <CommentBox
+            key={comment.id}
+            id={comment.id}
+            author={comment.author}
+            text={comment.text}
+          />
+        ))}
 
-      {currentComments.map((comment) => (
-        <CommentBox
-          key={comment.id}
-          id={comment.id}
-          author={comment.author}
-          text={comment.text}
+        {/* Pagination */}
+        <Pagination
+          totalItems={allComments.length}
+          itemsPerPage={commentsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
         />
-      ))}
-
-      
-
-      <Pagination
-        totalItems={allComments.length}
-        itemsPerPage={commentsPerPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+      </div>
+      {/* ====== FULL COLORED BOX ENDS HERE ====== */}
     </div>
   );
 };

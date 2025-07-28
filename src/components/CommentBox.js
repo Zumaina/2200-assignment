@@ -3,9 +3,22 @@ import styles from "../css/CommentBox.module.css";
 
 const CommentBox = ({ id, author, text }) => {
   const [selectedReaction, setSelectedReaction] = useState("");
+  const [likeCount, setLikeCount] = useState(4);
+  const [dislikeCount, setDislikeCount] = useState(2);
 
   const handleReaction = (reaction) => {
-    setSelectedReaction(reaction === selectedReaction ? "" : reaction);
+    if (reaction === selectedReaction) {
+      setSelectedReaction("");
+    } else {
+      setSelectedReaction(reaction);
+      if (reaction === "like" && selectedReaction !== "like") {
+        setLikeCount((prev) => prev + 1);
+        if (selectedReaction === "dislike") setDislikeCount((prev) => prev - 1);
+      } else if (reaction === "dislike" && selectedReaction !== "dislike") {
+        setDislikeCount((prev) => prev + 1);
+        if (selectedReaction === "like") setLikeCount((prev) => prev - 1);
+      }
+    }
   };
 
   // Format today's date as "28 July 2025"
@@ -20,7 +33,12 @@ const CommentBox = ({ id, author, text }) => {
     <div className={styles.commentBox}>
       {/* Report button at top-right */}
       <div className={styles.reportWrapper}>
-        <button className={styles.reportButton}><strong>Report</strong></button>
+        <button
+          className={`${styles.reactionButton} ${selectedReaction === "report" ? styles.reportSelected : ""}`}
+          onClick={() => handleReaction("report")}
+        >
+          <strong>Report</strong>
+        </button>
       </div>
 
       {/* Avatar + Author Name + Date */}
@@ -37,24 +55,23 @@ const CommentBox = ({ id, author, text }) => {
       {/* Reaction Buttons */}
       <div className={styles.buttonRow}>
         <button
-          className={`${styles.reactionButton} ${styles.like} ${
-            selectedReaction === "like" ? styles.selected : ""
-          }`}
+          className={`${styles.reactionButton} ${selectedReaction === "like" ? styles.likeSelected : ""}`}
           onClick={() => handleReaction("like")}
         >
-          <strong>Like</strong> <span className={styles.count}><strong>4</strong></span>
+          <strong>Like</strong> <span className={styles.count}><strong>{likeCount}</strong></span>
         </button>
 
         <button
-          className={`${styles.reactionButton} ${styles.dislike} ${
-            selectedReaction === "dislike" ? styles.selected : ""
-          }`}
+          className={`${styles.reactionButton} ${selectedReaction === "dislike" ? styles.dislikeSelected : ""}`}
           onClick={() => handleReaction("dislike")}
         >
-          <strong>Dislike</strong> <span className={styles.count}><strong>2</strong></span>
+          <strong>Dislike</strong> <span className={styles.count}><strong>{dislikeCount}</strong></span>
         </button>
 
-        <button className={`${styles.reactionButton} ${styles.reply}`}>
+        <button
+          className={`${styles.reactionButton} ${selectedReaction === "reply" ? styles.replySelected : ""}`}
+          onClick={() => handleReaction("reply")}
+        >
           <strong>Reply</strong>
         </button>
       </div>

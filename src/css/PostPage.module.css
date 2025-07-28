@@ -1,0 +1,36 @@
+.commentsSection {
+  background-color: #ece2ec; /* light blue */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.commentInputRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px; /* 🔹 This adds the gap */
+}
+
+
+.commentInput {
+  flex: 1;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.commentSubmit {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.commentSubmit:hover {
+  background-color: #0056b3;
+}
