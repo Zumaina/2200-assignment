@@ -1,13 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 import PostPage from "./pages/PostPage";
 import AuthorProfile from "./pages/AuthorProfile";
-import './css/App.module.css';
+import "./css/App.module.css";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PostPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/post/:postId" element={<PostPage />} />
         <Route path="/author/:authorId" element={<AuthorProfile />} />
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,30 @@
+.card {
+  background-color: #f9f9f9;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.title a:hover {
+  text-decoration: underline;
+}
+
+.meta {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+}
