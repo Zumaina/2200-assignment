@@ -1,0 +1,24 @@
+.background {
+  background-color: #ece2ec;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+  color: #000000;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subheading {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+}

@@ -8,13 +8,13 @@
 }
 
 .card:hover {
-  background-color: #f1f1f1;
+  background-color: #eaf4fc;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .title a {
   text-decoration: none;
-  color: #007bff;
+  color: #000000;
   font-size: 20px;
   font-weight: bold;
 }
