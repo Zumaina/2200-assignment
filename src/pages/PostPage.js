@@ -25,7 +25,22 @@ const PostPage = () => {
 
   return (
     <div>
-      <h1>This is Post Page</h1>
+      <div style={{ marginBottom: "16px" }}>
+  <nav style={{ fontSize: "14px", marginBottom: "4px" }}>
+    <Link to="/" style={{ color: "#007bff", textDecoration: "none", fontWeight: "bold" }}>
+      Home
+    </Link>
+    <span style={{ margin: "0 6px", color: "#555" }}>›</span>
+    <span style={{ fontWeight: "bold", color: "#333" }}>Post</span>
+  </nav>
+  <h1 style={{ margin: 0 }}>This is Post Page</h1>
+</div>
+
+      <h2>Why Blood Donation Matters</h2>
+        <p style={{ marginBottom: "20px", maxWidth: "700px" }}>
+          Blood donation is a noble act that saves lives. Donating just one pint of blood can help up to three people. Learn more about why regular donation is so important for the healthcare system.
+        </p>
+
       <p>
         Author: <Link to={`/author/${dummyAuthorId}`}>John Doe</Link>
       </p>
