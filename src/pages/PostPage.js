@@ -1,12 +1,15 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import Avatar from "@mui/material/Avatar";
+import Posts from "../data/Posts";
 import ReactionBar from "../components/ReactionBar";
 import CommentBox from "../components/CommentBox";
 import Pagination from "../components/Pagination";
 import styles from "../css/PostPage.module.css";
+import { useState } from "react";
 
 const PostPage = () => {
-  const dummyAuthorId = "123";
+  const { id } = useParams();
+  const post = Posts.find((p) => String(p.id) === String(id)); // ✅ Fix: Type-safe match
 
   const allComments = [
     { id: 1, author: "Alice", text: "This is the first comment." },
@@ -18,48 +21,48 @@ const PostPage = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const commentsPerPage = 2;
-
   const indexOfLast = currentPage * commentsPerPage;
   const indexOfFirst = indexOfLast - commentsPerPage;
   const currentComments = allComments.slice(indexOfFirst, indexOfLast);
 
+  if (!post) return <h2>Post not found</h2>;
+
   return (
-    <div>
-      <div style={{ marginBottom: "16px" }}>
-  <nav style={{ fontSize: "14px", marginBottom: "4px" }}>
-    <Link to="/" style={{ color: "#007bff", textDecoration: "none", fontWeight: "bold" }}>
-      Home
-    </Link>
-    <span style={{ margin: "0 6px", color: "#555" }}>›</span>
-    <span style={{ fontWeight: "bold", color: "#333" }}>Post</span>
-  </nav>
-  <h1 style={{ margin: 0 }}>This is Post Page</h1>
+    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+      <nav style={{ fontSize: "14px", marginBottom: "8px" }}>
+        <Link to="/" style={{ color: "#007bff", textDecoration: "none", fontWeight: "bold" }}>
+          Home
+        </Link>
+        <span style={{ margin: "0 6px", color: "#555" }}>›</span>
+        <span style={{ fontWeight: "bold", color: "#333" }}>Post</span>
+      </nav>
+
+      <h1>{post.title}</h1>
+
+      <div style={{ display: "flex", alignItems: "center", marginBottom: "16px" }}>
+  <Avatar sx={{ width: 36, height: 36, bgcolor: "#b689b8", fontSize: 16 }}>
+    {post.author
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()}
+  </Avatar>
+  <span style={{ marginLeft: "10px", fontSize: "14px", color: "#666" }}>
+    <strong>
+      <Link to={`/author/${post.authorId}`} style={{ color: "#007bff", textDecoration: "none" }}>
+        {post.author}
+      </Link>
+    </strong>{" "}
+    on {post.date}
+  </span>
 </div>
 
-      <h2>Why Blood Donation Matters</h2>
-        <p style={{ marginBottom: "20px", maxWidth: "700px" }}>
-          Blood donation is a noble act that saves lives. Donating just one pint of blood can help up to three people. Learn more about why regular donation is so important for the healthcare system.
-        </p>
 
-      <p>
-        Author: <Link to={`/author/${dummyAuthorId}`}>John Doe</Link>
-      </p>
-      <div style={{ marginBottom: "20px", lineHeight: "1.6" }}>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
-    Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
-  </p>
-  <p>
-    Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. 
-    Mauris massa. Vestibulum lacinia arcu eget nulla.
-  </p>
-</div>
+      <p style={{ marginBottom: "20px", lineHeight: "1.6" }}>{post.description}</p>
 
       <ReactionBar />
 
-      {/* ====== FULL COLORED BOX STARTS HERE ====== */}
       <div className={styles.commentsSection}>
-        {/* Comments Summary and Input */}
         <h3>Number of Comments: {allComments.length}</h3>
         <div className={styles.commentInputRow}>
           <input
@@ -70,7 +73,6 @@ const PostPage = () => {
           <button className={styles.commentSubmit}>→</button>
         </div>
 
-        {/* Render paginated comments */}
         {currentComments.map((comment) => (
           <CommentBox
             key={comment.id}
@@ -80,7 +82,6 @@ const PostPage = () => {
           />
         ))}
 
-        {/* Pagination */}
         <Pagination
           totalItems={allComments.length}
           itemsPerPage={commentsPerPage}
@@ -88,7 +89,6 @@ const PostPage = () => {
           setCurrentPage={setCurrentPage}
         />
       </div>
-      {/* ====== FULL COLORED BOX ENDS HERE ====== */}
     </div>
   );
 };
