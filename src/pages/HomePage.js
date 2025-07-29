@@ -7,10 +7,11 @@ const HomePage = () => {
   return (
     <div className={styles.background}>
       <div className={styles.container}>
-        <h1 className={styles.heading}> Blood Donation Stories</h1>
-        <p className={styles.subheading}>
-          Real experiences shared by amazing donors and recipients.
-        </p>
+        <h1 className={styles.heading}> Real Women. Real Code. Real Impact. </h1>
+<p className={styles.subheading}>
+  From first commits to full-stack dreams — discover journeys that inspire.
+</p>
+
         {Posts.map((post) => (
           <PostCard key={post.id} post={post} />
         ))}

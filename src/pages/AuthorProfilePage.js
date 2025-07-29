@@ -3,9 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Posts from "../data/Posts";
 import Breadcrumb from "../components/BreadCrumb";
-import styles from "../css/AuthorProfile.module.css";
+import styles from "../css/AuthorProfilePage.module.css";
 
-const AuthorProfile = () => {
+const AuthorProfilePage = () => {
   const { authorId } = useParams();
 
   // Filter posts by this author
@@ -19,17 +19,17 @@ const AuthorProfile = () => {
   const { author } = authorPosts[0];
 
   const authorInfo = {
-    alice: {
-      bio: "A passionate nurse who has been donating blood regularly since 2015.",
-      quote: "Every drop counts. Be the reason for someone's heartbeat.",
-      location: "Berlin, Germany",
-    },
-    bob: {
-      bio: "Software engineer by profession, life-saver by heart. Donor since university.",
-      quote: "I donate blood to give hope, strength, and life.",
-      location: "Toronto, Canada",
-    },
-  };
+  alice: {
+    bio: "Frontend developer passionate about inclusive UI design and hackathons.",
+    quote: "You don’t have to know everything—just start building.",
+    location: "Berlin, Germany",
+  },
+  sophia: {
+    bio: "Full-stack engineer and mentor, sharing what I learn one post at a time.",
+    quote: "Every bug I fix makes me stronger.",
+    location: "Toronto, Canada",
+  },
+};
 
   const { bio, quote, location } = authorInfo[authorId];
 
@@ -79,4 +79,4 @@ const AuthorProfile = () => {
   );
 };
 
-export default AuthorProfile;
+export default AuthorProfilePage;

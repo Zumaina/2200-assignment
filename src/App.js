@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import PostPage from "./pages/PostPage";
-import AuthorProfile from "./pages/AuthorProfile";
-import './css/App.module.css';
+import AuthorProfilePage from "./pages/AuthorProfilePage";
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/post/:id" element={<PostPage />} />
-        <Route path="/author/:authorId" element={<AuthorProfile />} />
+        <Route path="/author/:authorId" element={<AuthorProfilePage />} />
       </Routes>
     </BrowserRouter>
   );
