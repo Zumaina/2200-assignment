@@ -24,9 +24,10 @@ const PostCard = ({ post }) => {
         </Avatar>
         <p className={styles.meta}>
           <strong style={{ marginLeft: "8px" }}>
-            <Link to={`/author/${authorId}`} style={{ color: "#007bff", textDecoration: "none" }}>
-              {author}
-            </Link>
+            <Link to={`/author/${authorId}`} className={styles.authorLink}>
+  {author}
+</Link>
+
           </strong>{" "}
           on {date}
         </p>

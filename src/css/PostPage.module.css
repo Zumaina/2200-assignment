@@ -34,3 +34,11 @@
 .commentSubmit:hover {
   background-color: #0056b3;
 }
+.authorLink {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.authorLink:hover {
+  text-decoration: underline;
+}

@@ -44,7 +44,7 @@ const PostPage = () => {
   </Avatar>
   <span style={{ marginLeft: "10px", fontSize: "14px", color: "#666" }}>
     <strong>
-      <Link to={`/author/${post.authorId}`} style={{ color: "#007bff", textDecoration: "none" }}>
+      <Link to={`/author/${post.authorId}`} className={styles.authorLink}>
         {post.author}
       </Link>
     </strong>{" "}
