@@ -33,19 +33,19 @@
 }
 
 .likeSelected {
-  background-color: #28a745;
+  background-color: #ad35dc;
   color: white;
   border: none;
 }
 
 .dislikeSelected {
-  background-color: #dc3545;
+  background-color: #ad35dc;
   color: white;
   border: none;
 }
 
 .replySelected {
-  background-color: #ff8800;
+  background-color: #ad35dc;
   color: white;
   border: none;
 }
@@ -67,7 +67,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: #007bff;
+  background-color: #6a1b9a;
   color: white;
   font-weight: bold;
   display: flex;

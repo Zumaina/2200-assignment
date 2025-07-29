@@ -1,7 +1,7 @@
 const Posts = [
   {
     id: "1",
-    author: "Alice",
+    author: "Alice Johnson",
     authorId: "alice",
     title: "How Blood Donation Saved My Family",
     description: `In early 2023, my younger brother was involved in a serious accident. He lost a lot of blood and needed an immediate transfusion. Our hospital was low on supply, and panic started to set in. 
@@ -23,7 +23,7 @@ Be the reason someone believes in humanity again.`,
   },
   {
     id: "2",
-    author: "Bob",
+    author: "Bob Miller",
     authorId: "bob",
     title: "Why I Donate Blood Every 4 Months",
     description: `Blood donation has become a part of my lifestyle. Every four months, like clockwork, I visit the local blood center. 
@@ -45,7 +45,7 @@ You don’t have to be a doctor to save lives.`,
   },
   {
     id: "3",
-    author: "Alice",
+    author: "Alice Johnson",
     authorId: "alice",
     title: "Facts You Should Know Before Donating",
     description: `There are many myths surrounding blood donation. Let’s clear them up. 
@@ -67,7 +67,7 @@ Think about that power the next time you hesitate.`,
   },
   {
     id: "4",
-    author: "Bob",
+    author: "Bob Miller",
     authorId: "bob",
     title: "My First Blood Donation Experience",
     description: `I was terrified the first time I walked into a blood donation camp. 
@@ -89,7 +89,7 @@ Take the leap. You might change someone’s life.`,
   },
   {
     id: "5",
-    author: "Alice",
+    author: "Alice Johnson",
     authorId: "alice",
     title: "Tips to Prepare Before Donating Blood",
     description: `Donating blood is easy if you prepare right. 
@@ -111,8 +111,8 @@ A little prep goes a long way to make the experience smooth and safe.`,
   },
   {
     id: "6",
-    author: "David",
-    authorId: "david",
+    author: "Bob Miller",
+    authorId: "bob",
     title: "Donating Platelets: A Different Way to Help",
     description: `Most people only think of donating whole blood, but platelets are just as important. 
 They help cancer patients, burn victims, and others needing clotting support. 
@@ -133,8 +133,8 @@ Consider being someone’s hero in a unique way.`,
   },
   {
     id: "7",
-    author: "Eva",
-    authorId: "eva",
+    author: "Alice Johnson",
+    authorId: "alice",
     title: "How to Encourage Friends to Donate",
     description: `Many people want to help but need a little push. 
 Start by sharing your own experience. 
@@ -155,8 +155,8 @@ Be the gentle motivation they need to take that first step.`,
   },
   {
     id: "8",
-    author: "Charlie",
-    authorId: "charlie",
+    author: "Bob Miller",
+    authorId: "bob",
     title: "Blood Donation & Mental Health Connection",
     description: `Donating blood has unexpected benefits for mental health. 
 You feel a sense of accomplishment after giving. 
@@ -177,7 +177,7 @@ Donate regularly and see the mental shift it brings.`,
   },
   {
     id: "9",
-    author: "Alice",
+    author: "Alice Johnson",
     authorId: "alice",
     title: "How Donors Are Screened Before Giving",
     description: `Before you donate blood, you go through a health screening. 
@@ -199,7 +199,7 @@ Be honest, and you’ll have a smooth donation day.`,
   },
   {
     id: "10",
-    author: "Bob",
+    author: "Bob Miller",
     authorId: "bob",
     title: "How Blood Donation Strengthens Communities",
     description: `Communities thrive when people support each other. 

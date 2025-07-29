@@ -1,0 +1,26 @@
+/* src/css/BreadCrumb.module.css */
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: #333;
+  font-weight: bold;
+}
+
+.separator {
+  margin: 0 6px;
+  color: #888;
+}

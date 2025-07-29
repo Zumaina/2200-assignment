@@ -19,7 +19,7 @@ const PostCard = ({ post }) => {
         <Link to={`/post/${id}`}>{title}</Link>
       </h2>
       <div className={styles.metaRow}>
-        <Avatar sx={{ width: 32, height: 32, bgcolor: "#b689b8ff", fontSize: 14 }}>
+        <Avatar sx={{ width: 32, height: 32, bgcolor: "#6a1b9a", fontSize: 14 }}>
           {getInitials(author)}
         </Avatar>
         <p className={styles.meta}>

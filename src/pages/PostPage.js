@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Posts from "../data/Posts";
+import Breadcrumb from "../components/BreadCrumb";
 import ReactionBar from "../components/ReactionBar";
 import CommentBox from "../components/CommentBox";
 import Pagination from "../components/Pagination";
@@ -29,18 +30,12 @@ const PostPage = () => {
 
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <nav style={{ fontSize: "14px", marginBottom: "8px" }}>
-        <Link to="/" style={{ color: "#007bff", textDecoration: "none", fontWeight: "bold" }}>
-          Home
-        </Link>
-        <span style={{ margin: "0 6px", color: "#555" }}>›</span>
-        <span style={{ fontWeight: "bold", color: "#333" }}>Post</span>
-      </nav>
+      <Breadcrumb links={[{ name: "Home", to: "/" }, { name: "Post" }]} />
 
       <h1>{post.title}</h1>
 
       <div style={{ display: "flex", alignItems: "center", marginBottom: "16px" }}>
-  <Avatar sx={{ width: 36, height: 36, bgcolor: "#b689b8", fontSize: 16 }}>
+  <Avatar sx={{ width: 36, height: 36, bgcolor: "#6a1b9a", fontSize: 16 }}>
     {post.author
       .split(" ")
       .map((n) => n[0])
