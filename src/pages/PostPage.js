@@ -10,8 +10,7 @@ import { useState } from "react";
 
 const PostPage = () => {
   const { id } = useParams();
-  const post = Posts.find((p) => String(p.id) === String(id)); // ✅ Fix: Type-safe match
-
+  const post = Posts.find((p) => String(p.id) === String(id)); 
   const allComments = [
     { id: 1, author: "Alice", text: "This is the first comment." },
     { id: 2, author: "Bob", text: "This is the second comment." },

@@ -1,4 +1,3 @@
-// src/pages/AuthorProfile.js
 import { useParams, Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Posts from "../data/Posts";
@@ -8,14 +7,12 @@ import styles from "../css/AuthorProfilePage.module.css";
 const AuthorProfilePage = () => {
   const { authorId } = useParams();
 
-  // Filter posts by this author
   const authorPosts = Posts.filter((post) => post.authorId === authorId);
 
   if (authorPosts.length === 0) {
     return <h2>Author not found</h2>;
   }
 
-  // Get author info from first post
   const { author } = authorPosts[0];
 
   const authorInfo = {

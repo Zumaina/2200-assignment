@@ -21,7 +21,6 @@ const CommentBox = ({ id, author, text }) => {
     }
   };
 
-  // Format today's date as "28 July 2025"
   const today = new Date();
   const formattedDate = today.toLocaleDateString("en-GB", {
     day: "2-digit",
@@ -31,7 +30,6 @@ const CommentBox = ({ id, author, text }) => {
 
   return (
     <div className={styles.commentBox}>
-      {/* Report button at top-right */}
       <div className={styles.reportWrapper}>
         <button
           className={`${styles.reactionButton} ${selectedReaction === "report" ? styles.reportSelected : ""}`}
@@ -41,7 +39,6 @@ const CommentBox = ({ id, author, text }) => {
         </button>
       </div>
 
-      {/* Avatar + Author Name + Date */}
       <div className={styles.authorRow}>
         <div className={styles.avatar}>{author.charAt(0)}</div>
         <div className={styles.authorInfo}>
@@ -49,10 +46,8 @@ const CommentBox = ({ id, author, text }) => {
         </div>
       </div>
 
-      {/* Comment Text */}
       <p>{text}</p>
 
-      {/* Reaction Buttons */}
       <div className={styles.buttonRow}>
         <button
           className={`${styles.reactionButton} ${selectedReaction === "like" ? styles.likeSelected : ""}`}

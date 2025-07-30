@@ -1,4 +1,3 @@
-// src/components/ReactionBar.js
 import { useState } from "react";
 import styles from "../css/ReactionBar.module.css";
 

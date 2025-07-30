@@ -1,5 +1,5 @@
 .commentsSection {
-  background-color: #ece2ec; /* light blue */
+  background-color: #ece2ec; 
   padding: 20px;
   border-radius: 8px;
   margin-top: 30px;
@@ -10,7 +10,7 @@
   display: flex;
   gap: 10px;
   margin-top: 10px;
-  margin-bottom: 20px; /*  This adds the gap */
+  margin-bottom: 20px; 
 }
 
 
